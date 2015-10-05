@@ -21,14 +21,15 @@ SevSeg sevseg;
 
 void setup() {
   // put your setup code here, to run once:
-byte numDigits = 4;
+   byte numDigits = 4;
    byte digitPins[] = {d1, d2, d3, d4};
    byte segmentPins[] = {a, b, c, d, e, f, g, dp};
-   sevseg.begin(COMMON_ANODE, numDigits, digitPins, segmentPins);
+   sevseg.begin(COMMON_CATHODE, numDigits, digitPins, segmentPins);
 }
 
 void loop() {
   // put your main code here, to run repeatedly:
-sevseg.setNumber(1,1);
+  sevseg.setNumber(3.141f,3);
   sevseg.refreshDisplay();
+  sevseg.setBrightness(90);
 }
